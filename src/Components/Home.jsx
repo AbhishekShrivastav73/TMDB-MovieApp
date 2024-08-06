@@ -18,7 +18,6 @@ function Home() {
   const [topRatted, setTopRatted] = useState([]);
 
   const dispatch = useDispatch();
- 
 
   const getHero = () => {
     axios
@@ -36,7 +35,6 @@ function Home() {
       });
   };
 
- 
   const getUpcoming = () => {
     axios
       .get(`/movie/upcoming`)
@@ -65,7 +63,7 @@ function Home() {
     dispatch(fetchTrending({ category: category, duration: duration }));
   }, [category, duration, dispatch]);
 
-  return wallpaper && trending ? (
+  return wallpaper ? (
     <div className="relative text-white w-full min-h-screen">
       <Navbar />
       <Hero data={wallpaper} />
@@ -85,17 +83,19 @@ function Home() {
             />
           </div>
         </div>
-        <div className="w-full h-fit py-6 md:py-3 flex items-center  gap-4 overflow-x-auto">
+        <div className="w-full h-fit py-6 md:py-5 flex items-center  gap-4 overflow-x-auto">
           {trendingData &&
-            trendingData.map((data, idx) => <Cards key={data.id} data={data} />)}
+            trendingData.map((data, idx) => (
+              <Cards key={data.id} data={data} />
+            ))}
         </div>
-        <h1 className="text-4xl font-semibold  my-2">Upcoming Movies</h1>
-        <div className="w-full h-fit py-6 md:py-3  flex items-center  gap-4 overflow-x-auto">
+        <h1 className="text-4xl font-semibold my-2">Upcoming Movies</h1>
+        <div className="w-full h-fit py-6 md:py-5  flex items-center  gap-4 overflow-x-auto">
           {upcoming &&
             upcoming.map((data, idx) => <Cards key={data.id} data={data} />)}
         </div>
         <h1 className="text-4xl font-semibold  my-2">Top-Ratted Movies</h1>
-        <div className="w-full h-fit py-6 md:py-3  flex items-center  gap-4 overflow-x-auto">
+        <div className="w-full h-fit py-6 md:py-5  flex items-center  gap-4 overflow-x-auto">
           {topRatted &&
             topRatted.map((data, idx) => <Cards key={data.id} data={data} />)}
         </div>

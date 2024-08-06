@@ -65,7 +65,7 @@ function Footer() {
               </li>
   
               <li>
-                <a href="#" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
+                <a href="/popular" class="text-gray-700 transition hover:opacity-75 dark:text-gray-200">
                   Popular
                 </a>
               </li>

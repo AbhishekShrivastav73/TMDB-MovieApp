@@ -39,10 +39,10 @@ function Navbar() {
               </Link>
 
               <Link to={`/popular`} className="font-semibold">
-                <i class="ri-movie-2-line"></i> Popular Movies
+                <i class="ri-movie-2-line"></i> Popular 
               </Link>
               <Link className="font-semibold">
-                <i class="ri-movie-2-line"></i> Top Rated Tv Shows
+                <i class="ri-movie-2-line"></i> Movie
               </Link>
               <Link className="font-semibold">
                 <i class="ri-movie-2-line"></i> People

@@ -45,7 +45,7 @@ function Popular() {
             onClick={() => navigate("/")}
             className="ri-arrow-left-line font-bold font-sans text-2xl cursor-pointer text-blue-600"
           ></i>
-          <h1 className="text-3xl font-semibold">Trending Now</h1>
+          <h1 className="text-3xl font-semibold flex items-end gap-4">Popular  <span className="text-lg text-blue-600">| {category.toUpperCase()}</span></h1>
         </div>
         <Search />
       </div>

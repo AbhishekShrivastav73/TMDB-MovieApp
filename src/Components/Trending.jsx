@@ -17,7 +17,7 @@ function Trending() {
   const getTrending = async () => {
     try {
       const response = await axios.get(`trending/${category}/${duration}`, {
-        params: { page }
+        params: { page },
       });
       if (response.data.results.length > 0) {
         setTrending((prev) => [...prev, ...response.data.results]);
@@ -45,7 +45,12 @@ function Trending() {
             onClick={() => navigate("/")}
             className="ri-arrow-left-line font-bold font-sans text-2xl cursor-pointer text-blue-600"
           ></i>
-          <h1 className="text-3xl font-semibold">Trending Now</h1>
+          <h1 className="text-3xl font-semibold flex items-end gap-4">
+            Trending{" "}
+            <span className="text-lg text-blue-600">
+              | {category.toUpperCase()}
+            </span>
+          </h1>
         </div>
         <Search />
       </div>
