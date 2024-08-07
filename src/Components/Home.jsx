@@ -8,6 +8,7 @@ import Footer from "./Partials/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrending } from "../Store/reducers/trendingSlice";
 
+
 function Home() {
   const [wallpaper, setWallpaper] = useState([]);
   const [trending, setTrending] = useState([]);

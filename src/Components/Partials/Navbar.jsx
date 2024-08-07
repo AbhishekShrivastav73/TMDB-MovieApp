@@ -41,14 +41,14 @@ function Navbar() {
               <Link to={`/popular`} className="font-semibold">
                 <i class="ri-movie-2-line"></i> Popular 
               </Link>
-              <Link className="font-semibold">
+              <Link to={'/movie'} className="font-semibold">
                 <i class="ri-movie-2-line"></i> Movie
               </Link>
-              <Link className="font-semibold">
-                <i class="ri-movie-2-line"></i> People
+              <Link to={'/tv'} className="font-semibold">
+                <i class="ri-movie-2-line"></i> Tv Shows
               </Link>
-              <Link className="font-semibold">
-                <i class="ri-movie-2-line"></i> Populars
+              <Link to={'/person'} className="font-semibold">
+                <i class="ri-movie-2-line"></i> Person
               </Link>
               <hr className="my-4" />
             </div>
