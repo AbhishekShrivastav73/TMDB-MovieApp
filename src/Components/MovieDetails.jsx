@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { removeMovie } from "../Store/reducers/MovieSlice";
 import Search from "./Partials/Search";
 import Loader from "./Partials/Loader";
-
 import Hero from "./Partials/Hero";
 import { asyncLoadMovie } from "../Store/actions/MovieAction";
 import Cards from "./Partials/Cards";
@@ -39,16 +38,7 @@ function MovieDetails() {
       </div>
       <Hero data={data.dets} />
       <div className="p-4">
-        <div className="flex flex-col gap-4 py-3">
-          <h1 className="text-3xl font-semibold">{data.dets.title} <span className="text-blue-500">: Overview</span></h1>
-          <p className="md:w-2/3">{data.dets.overview}</p>
-          <div className="flex items-center gap-4">
-            <p className="text-blue-500">Production Companies :  </p>
-            {data.dets.production_companies.map((data)=>(
-              <p>{data.name}</p>
-            ))}
-          </div>
-        </div>
+        
         <div className="flex justify-between items-center">
           <h1 className="text-4xl font-semibold  ">Casts</h1>
           <i class="ri-arrow-right-double-line text-2xl text-blue-500"></i>
@@ -56,7 +46,7 @@ function MovieDetails() {
         <div className="w-full h-fit py-6 md:py-5  flex items-center  gap-4 overflow-x-auto">
           {data &&
             data.credits.cast.map((data, idx) => (
-              <Cards key={data.id} data={data} title="movie" />
+              <Cards key={data.id} data={data} title="person" />
             ))}
         </div>
         <div className="flex justify-between items-center">

@@ -22,7 +22,7 @@ function Hero({ data }) {
         <div className="flex items-center gap-4 ">
           {data.media_type ? (
             <p className=" border bg-orange-500 hover:text-white font-bold text-sm border-white px-4 py-2 rounded-full">
-              Release Date : {data.media_type}
+              Type : {data.media_type}
             </p>
           ) : (
             ""
