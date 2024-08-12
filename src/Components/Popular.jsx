@@ -64,7 +64,7 @@ function Popular() {
       >
         <div className="w-full min-h-screen flex flex-wrap gap-8 justify-center mt-5">
           {popular.map((data) => (
-            <Cards key={data.id} data={data} />
+            <Cards key={data.id} data={data} title={category} />
           ))}
         </div>
       </InfiniteScroll>

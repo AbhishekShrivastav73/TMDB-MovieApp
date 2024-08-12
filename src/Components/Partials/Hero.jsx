@@ -20,9 +20,13 @@ function Hero({ data }) {
           <Link className="text-blue-500">Read more.</Link>
         </p>
         <div className="flex items-center gap-4 ">
-          <p className=" border bg-orange-500 hover:text-white font-bold text-sm border-white px-4 py-2 rounded-full">
-            Type : {data.media_type}
-          </p>
+          {data.media_type ? (
+            <p className=" border bg-orange-500 hover:text-white font-bold text-sm border-white px-4 py-2 rounded-full">
+              Release Date : {data.media_type}
+            </p>
+          ) : (
+            ""
+          )}
           {data.release_date ? (
             <p className=" border bg-orange-500 hover:text-white font-bold text-sm border-white px-4 py-2 rounded-full">
               Release Date : {data.release_date}
@@ -31,11 +35,22 @@ function Hero({ data }) {
             ""
           )}
         </div>
+        {data.genres ? (
+          <div className="flex items-center gap-4 flex-wrap">
+          { data.genres.map((elem)=>(
+            <span key={elem.id} className="px-4 py-1 text-sm border-orange-500 tracking-tighter font-medium border-2 rounded-full">{elem.name}</span>
+          ))}
+      </div>
+        ) : ''}
+        
         <Link className="text-white font-semibold bg-blue-600 px-4 py-2 rounded-full ">
           {" "}
           <i class="ri-tv-2-line mr-2"></i> Watch Trailer
         </Link>
       </div>
+
+        
+
     </div>
   );
 }

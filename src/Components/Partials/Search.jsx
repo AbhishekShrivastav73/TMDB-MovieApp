@@ -41,7 +41,7 @@ function Search() {
          <div className="absolute top-full mt-2 z-30 left-0 w-full h-64 flex flex-col gap-2 overflow-auto">
          {search &&
            search.map((item, idx) => (
-             <Link to={'/'} className="w-full flex items-center gap-4 px-4 py-4 bg-zinc-200 hover:bg-zinc-50 hover:text-zinc-800">
+             <Link to={`/${item.media_type}/details/${item.id}}`} className="w-full flex items-center gap-4 px-4 py-4 bg-zinc-200 hover:bg-zinc-50 hover:text-zinc-800">
                <img
                  className="h-16 w-16 rounded-md"
                  src={`https://image.tmdb.org/t/p/w185/${item.poster_path || item.profile_path || item.backdrop_path}`}

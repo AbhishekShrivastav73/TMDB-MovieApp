@@ -64,7 +64,7 @@ function Tv() {
       >
         <div className="w-full min-h-screen flex flex-wrap gap-8 justify-center mt-5">
           {Tv.map((data) => (
-            <Cards key={data.id} data={data} />
+            <Cards key={data.id} data={data} title={'tv'} />
           ))}
         </div>
       </InfiniteScroll>

@@ -64,7 +64,7 @@ function Movie() {
       >
         <div className="w-full min-h-screen flex flex-wrap gap-8 justify-center mt-5">
           {movie.map((data) => (
-            <Cards key={data.id} data={data} />
+            <Cards key={data.id} data={data} title='movie'/>
           ))}
         </div>
       </InfiniteScroll>

@@ -8,10 +8,8 @@ import Footer from "./Partials/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrending } from "../Store/reducers/trendingSlice";
 
-
 function Home() {
   const [wallpaper, setWallpaper] = useState([]);
-  const [trending, setTrending] = useState([]);
   const trendingData = useSelector((state) => state.trending.data);
   const [category, setCategory] = useState("all");
   const [duration, setDuration] = useState("day");
@@ -70,7 +68,10 @@ function Home() {
       <Hero data={wallpaper} />
       <div className="w-full min-h-screen p-4">
         <div className="flex flex-col md:flex-row md:items-center gap-6 justify-between mb-2 tracking-tighter">
-          <h1 className="text-4xl font-semibold  ">Trending Now🔥</h1>
+          <div className="flex justify-between items-center">
+            <h1 className="text-4xl  font-semibold  ">Trending Now🔥</h1>
+            <i class="ri-arrow-right-double-line text-2xl text-blue-500"></i>
+          </div>
           <div className="flex items-center gap-4">
             <Filter
               title={"Category"}
@@ -90,12 +91,18 @@ function Home() {
               <Cards key={data.id} data={data} />
             ))}
         </div>
-        <h1 className="text-4xl font-semibold my-2">Upcoming Movies</h1>
+        <div className="flex justify-between items-center">
+            <h1 className="text-4xl font-semibold  ">Upcoming Movies</h1>
+            <i class="ri-arrow-right-double-line text-2xl text-blue-500"></i>
+          </div>
         <div className="w-full h-fit py-6 md:py-5  flex items-center  gap-4 overflow-x-auto">
           {upcoming &&
-            upcoming.map((data, idx) => <Cards key={data.id} data={data} />)}
+            upcoming.map((data, idx) => <Cards key={data.id} data={data} title='movie' />)}
         </div>
-        <h1 className="text-4xl font-semibold  my-2">Top-Ratted Movies</h1>
+        <div className="flex justify-between items-center">
+            <h1 className="text-4xl font-semibold  ">Top-Rated Movies</h1>
+            <i class="ri-arrow-right-double-line text-2xl text-blue-500"></i>
+          </div>
         <div className="w-full h-fit py-6 md:py-5  flex items-center  gap-4 overflow-x-auto">
           {topRatted &&
             topRatted.map((data, idx) => <Cards key={data.id} data={data} />)}
