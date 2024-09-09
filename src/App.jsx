@@ -9,6 +9,7 @@ import Person from "./Components/Persons";
 import MovieDetails from "./Components/MovieDetails";
 import TvDetails from "./Components/TvDetails";
 import PersonDetails from "./Components/PersonDetails";
+import SeasonsDetails from "./Components/SeasonsDetails";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/movie/details/:id" element={<MovieDetails />} />
         <Route path="/tv" element={<Tv />}></Route>
         <Route path="/tv/details/:id" element={<TvDetails />} />
+        <Route path="/tv/details/:id/season/:season_number" element={<SeasonsDetails />} />
         <Route path="/person" element={<Person />}></Route>
         <Route path="/person/details/:id" element={<PersonDetails />} />
       </Routes>
