@@ -35,7 +35,7 @@ function SeasonsDetails() {
             className="ri-arrow-left-line font-bold font-sans text-2xl cursor-pointer text-blue-600"
           />
         </div>
-        <h1 className="text-4xl font-bold">{`Season ${season_number}`}</h1>
+        <h1 className="text-4xl font-bold text-blue-600">{`${season.name}`}</h1>
       </div>
       <div className="p-2 px-4 w-full min-h-screen flex flex-col md:flex-row">
         <div className="w-full md:w-1/3 flex flex-col items-center h-fit">
