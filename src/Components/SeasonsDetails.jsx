@@ -1,6 +1,6 @@
 import axios from "../utils/axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Loader from "./Partials/Loader";
 import SeasonCard from "./Partials/SeasonCard";
 import Cards from "./Partials/Cards";
@@ -38,21 +38,21 @@ function SeasonsDetails() {
         <h1 className="text-4xl font-bold text-blue-600">{`${season.name}`}</h1>
       </div>
       <div className="p-2 px-4 w-full min-h-screen flex flex-col md:flex-row">
-        <div className="w-full md:w-1/3 flex flex-col items-center h-fit">
+        <div className="w-full md:w-1/3 flex flex-col items-center h-fit ">
           <img
-            className="w-64 rounded-xl "
+            className="w-full md:w-64 rounded-xl  "
             src={`https://image.tmdb.org/t/p/original/${season.poster_path}`}
             alt=""
           />
           <h5 className="mt-4 font-normal tracking-tighter">Release Date :  {season.air_date}</h5>
         </div>
-        <div className="w-full md:w-1/2 md:h-screen overflow-auto">
-          <h1 className="text-5xl mb-3 font-semibold">{season.name}</h1>
+        <div className="w-full md:w-1/2 md:min-h-screen ">
+          <h1 className="text-5xl mb-3 font-semibold mt-2">{season.name}</h1>
           <div className="flex flex-col gap-6">
             {season.episodes.map((episode, idx) => (
-              <div key={episode.id} className="flex gap-5 flex-col md:flex-row items-center justify-between">
+              <Link to={`/tv/details/${id}/season/${season_number}/episode/${episode.episode_number}`} key={episode.id} className="flex gap-5 flex-col hover:scale-105 transition ease-in-out delay-75 md:flex-row items-center justify-between">
                 <div className="flex flex-col w-full md:w-2/3 ">
-                  <p className="text-blue-500">Episode - {idx + 1}</p>
+                  <p className="text-blue-500">Episode - {episode.episode_number}</p>
                   <h2 className="text-xl font-bold ">{episode.name}</h2>
                   <p className="font-thin">{episode.overview}</p>
                   <span className="border border-yellow-500 w-fit text-yellow-500 px-2 text-xs py-1 mt-4 rounded-xl">{episode.air_date}</span>
@@ -62,7 +62,7 @@ function SeasonsDetails() {
                   src={`https://image.tmdb.org/t/p/original/${episode.still_path}`}
                   alt=""
                 />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

@@ -7,6 +7,7 @@ import Filter from "./Partials/Filter";
 import Footer from "./Partials/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrending } from "../Store/reducers/trendingSlice";
+import Loader from "./Partials/Loader";
 
 function Home() {
   const [wallpaper, setWallpaper] = useState([]);
@@ -62,7 +63,7 @@ function Home() {
     dispatch(fetchTrending({ category: category, duration: duration }));
   }, [category, duration, dispatch]);
 
-  return wallpaper ? (
+  return wallpaper && trendingData ? (
     <div className="relative text-white w-full min-h-screen">
       <Navbar />
       <Hero data={wallpaper} />
@@ -111,7 +112,7 @@ function Home() {
       <Footer />
     </div>
   ) : (
-    <h1 className="text-4xl font-semibold text-white">Loading</h1>
+    <Loader/>
   );
 }
 

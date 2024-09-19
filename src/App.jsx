@@ -10,6 +10,7 @@ import MovieDetails from "./Components/MovieDetails";
 import TvDetails from "./Components/TvDetails";
 import PersonDetails from "./Components/PersonDetails";
 import SeasonsDetails from "./Components/SeasonsDetails";
+import Episode from "./Components/Episode";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/tv" element={<Tv />}></Route>
         <Route path="/tv/details/:id" element={<TvDetails />} />
         <Route path="/tv/details/:id/season/:season_number" element={<SeasonsDetails />} />
+        <Route path="/tv/details/:id/season/:season_number/episode/:epNumber" element={<Episode />} />
         <Route path="/person" element={<Person />}></Route>
         <Route path="/person/details/:id" element={<PersonDetails />} />
       </Routes>
