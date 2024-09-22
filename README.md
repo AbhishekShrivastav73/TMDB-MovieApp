@@ -1,6 +1,6 @@
 
 
-# 🎬 MovieMania - A Modern Movie App
+# 🎬 MovieMania - A Modern Movie App.
 
 
  
